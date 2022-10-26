@@ -143,3 +143,12 @@ const data = [
   "car",
   "truck",
 ];
+
+const transportation = data.reduce(function(object, item) {
+  if (!object.hasOwnProperty(item)) {
+    object[item] = 0;
+  }
+  object[item]++;
+  return object;
+}, {});
+console.log(transportation);
