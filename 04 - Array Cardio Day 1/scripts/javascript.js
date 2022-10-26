@@ -91,12 +91,16 @@ const ordered = inventors.sort(
       return -1;
     }
   } */
-  (a, b) => a.year > b.year ? 1 : -1
+  (a, b) => (a.year > b.year ? 1 : -1)
 );
-console.log(ordered);
+// console.log(ordered);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
+const totalYears = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(totalYears);
 
 // 5. Sort the inventors by years lived
 
